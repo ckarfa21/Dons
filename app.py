@@ -27,7 +27,7 @@ def index():
 def formulaire():
     return render_template('formulaire.html')
     
-@app.route("/action", methods=['POST'])    
+@app.route("/sauvegarder", methods=['POST'])    
 def action ():      
     nom=request.values.get("nom")    
     prenom=request.values.get("prenom")    
@@ -36,7 +36,7 @@ def action ():
     promise=request.values.get("promise")    
     conditions=request.values.get("conditions")   
     collections.insert_one({ "nom":nom, "prenom":prenom, "email":email, "adresse":adresse, "promise":promise,"conditions":conditions})    
-    return redirect("/form")
+    return redirect("/liste")
 
 @app.route("/liste")    
 def lists ():       
