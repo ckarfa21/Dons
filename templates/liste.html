@@ -1,0 +1,37 @@
+{%extends "base.html"%}
+{%block titre_page%}
+Liste des dons
+{%endblock%}
+{%block contenu%}
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Email</th>
+            <th scope="col">Somme</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for don in dons %}    
+            <tr> 
+            
+                <th scope="row">{{ don["_id"] }}</th>    
+                <td >{{ don["nom"] }}</td>    
+                <td >{{ don["prenom"] }}</td>    
+                <td >{{ don["adresse"] }}</td>   
+                <td >{{ don["email"] }}</td>  
+                <td >{{ don["promise"] }}</td>      
+            </tr>    
+        {% endfor %}
+        </tbody>
+      </table>
+        
+</div>
+
+
+{%endblock%}
+
